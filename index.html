@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grow – Teen Habit Tracker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .avatar, .settings {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #8e8e93;
+      cursor: pointer;
+    }
+
+    .settings::before {
+      content: "⚙️";
+      font-size: 18px;
+    }
+
+    .habit-card {
+      width: 90%;
+      background: #fff;
+      border: 1px solid #f0f0f0;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .habit-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .habit-info h2 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .habit-info p {
+      font-size: 14px;
+      color: #8e8e93;
+      margin: 4px 0 0 0;
+    }
+
+    .check-btn {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 2px solid #b3e5c1; /* soft mint */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .check-btn.completed {
+      background-color: #b3e5c1;
+      color: white;
+    }
+
+    .graph-card {
+      width: 90%;
+      border: 1px solid #f0f0f0;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      margin: 20px 0;
+    }
+
+    .graph-placeholder {
+      width: 100%;
+      height: 100px;
+      background: repeating-linear-gradient(
+        to right,
+        rgba(179,229,193,0.2) 0,
+        rgba(179,229,193,0.2) 10px,
+        transparent 10px,
+        transparent 20px
+      );
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .fab {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #b3e5c1;
+      color: white;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="avatar">A</div>
+    <h1>Today</h1>
+    <div class="settings"></div>
+  </header>
+
+  <div class="habit-card">
+    <div class="habit-info">
+      <h2>Deep Work Study</h2>
+      <p>5:00 / 30:00 min</p>
+    </div>
+    <div class="check-btn completed">✓</div>
+  </div>
+
+  <div class="habit-card">
+    <div class="habit-info">
+      <h2>30-Min Run</h2>
+      <p>10:00 / 30:00 min</p>
+    </div>
+    <div class="check-btn"></div>
+  </div>
+
+  <div class="habit-card">
+    <div class="habit-info">
+      <h2>No-Screen Morning</h2>
+      <p>Streak: 5 Days</p>
+    </div>
+    <div class="check-btn"></div>
+  </div>
+
+  <div class="graph-card">
+    <h2>Weekly Streak</h2>
+    <div class="graph-placeholder"></div>
+    <p>Current Streak: 14 Days</p>
+  </div>
+
+  <div class="fab">+</div>
+</body>
+</html>
